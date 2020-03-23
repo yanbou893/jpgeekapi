@@ -1,6 +1,6 @@
 class V1::TasksController < ApplicationController
   def index
-      tasks = Task.where(user_id: params[:id]).order(created_at: :desc)
+      tasks = Task.all
       render json: tasks
   end
     def show
