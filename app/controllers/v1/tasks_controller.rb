@@ -1,4 +1,8 @@
 class V1::TasksController < ApplicationController
+  def index
+      tasks = Task.where(user_id: params[:id]).order(created_at: :desc)
+      render json: tasks
+  end
     def show
         tasks = Task.find_by(user_id: params[:id]).order(created_at: :desc)
         render json: tasks
